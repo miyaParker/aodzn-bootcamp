@@ -49,7 +49,7 @@ const ITEMS = [
 export default function Transform() {
   return (
     <section className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
         <Reveal stagger={0.12}>
           <Pill>Why it matters</Pill>
           <h2 className="mx-auto mt-5 max-w-2xl text-5xl font-medium tracking-tight text-ink sm:text-6xl">

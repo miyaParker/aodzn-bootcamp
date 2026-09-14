@@ -12,13 +12,14 @@
   --color-ink: #0b0b0f;
   --color-ink-soft: #17171d;
 
-  --color-primary: #3457ff;
-  --color-primary-dark: #2542d9;
-  --color-primary-light: #eef1ff;
+  --color-primary: #008a77;
+  --color-primary-dark: #006658;
+  --color-primary-light: #e0f7f3;
 
   --color-accent-green: #21c274;
   --color-accent-green-light: #e3f9ee;
   --color-accent-yellow: #f7c948;
+  --color-accent-gold: #efbc00;
 
   --color-surface: #ffffff;
   --color-surface-muted: #f6f7fb;
@@ -34,6 +35,6 @@ body {
 }
 
 ::selection {
-  background: #3457ff;
+  background: #008a77;
   color: #ffffff;
 }

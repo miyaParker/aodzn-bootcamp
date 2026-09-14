@@ -4,15 +4,15 @@ import Pill from "./Pill";
 
 export default function Mentor() {
   return (
-    <section id="mentor" className="bg-primary py-20 text-white lg:py-28">
-      <div className="mx-auto grid max-w-5xl gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-10">
-        <Reveal className="relative mx-auto aspect-[4/5] w-full max-w-xs" y={16}>
+    <section id="mentor" className="bg-primary-dark py-20 text-white lg:py-28">
+      <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-10">
+        <Reveal className="relative aspect-[4/5] w-full max-w-sm" y={16}>
           <div className="absolute inset-0 overflow-hidden rounded-3xl bg-white/10">
             <Image
               src="/abdul.jpeg"
               alt="Abdulazees Olayinka"
               fill
-              sizes="(min-width: 1024px) 20rem, 90vw"
+              sizes="(min-width: 1024px) 24rem, 90vw"
               className="object-cover"
             />
           </div>
@@ -31,7 +31,7 @@ export default function Mentor() {
         </Reveal>
 
         <Reveal stagger={0.12}>
-          <Pill>Meet your instructor</Pill>
+          <Pill tone="dark">Meet your instructor</Pill>
           <h2 className="mt-5 text-5xl font-medium tracking-tight sm:text-6xl">
             Abdulazees Olayinka
           </h2>

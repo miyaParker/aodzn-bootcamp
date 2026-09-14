@@ -28,12 +28,12 @@ export default function PricingCard({ variant = "card" }: { variant?: "card" | "
     <div
       className={
         isCard
-          ? "flex h-full flex-col rounded-3xl bg-ink p-8 text-white shadow-xl lg:p-10"
+          ? "flex h-full flex-col rounded-3xl bg-primary-dark p-8 text-white shadow-xl lg:p-10"
           : "text-white"
       }
     >
       <div className="flex items-center gap-3">
-        <span className="rounded-full bg-accent-green px-6 py-3 text-2xl font-medium text-ink">
+        <span className="rounded-full bg-accent-gold px-6 py-3 text-2xl font-medium text-ink">
           {PRICING.discountPercent}% off
         </span>
         <span className="text-xl text-white/40 line-through">

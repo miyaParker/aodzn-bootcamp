@@ -76,7 +76,7 @@ function WeekItem({
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 cursor-pointer"
+        className="flex w-full items-start justify-between gap-4 cursor-pointer"
         aria-expanded={isOpen}
       >
         <span>
@@ -88,7 +88,7 @@ function WeekItem({
           </span>
         </span>
         <span
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-green text-white transition-transform duration-300 ease-in-out ${
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black/5 text-ink/60 transition-transform duration-300 ease-in-out ${
             isOpen ? "rotate-45" : ""
           }`}
         >
@@ -108,11 +108,11 @@ export default function Curriculum() {
   return (
     <section
       id="curriculum"
-      className="bg-primary bg-cover bg-center bg-no-repeat py-20 text-white lg:py-28"
-      style={{ backgroundImage: "url(/bg-5.jpg)" }}
+      className="bg-primary  bg-cover bg-center bg-no-repeat py-20 text-white lg:py-28"
+      style={{ backgroundImage: "url(/bg-10.jpg)" }}
     >
       <Reveal stagger={0.12} className="mx-auto max-w-6xl px-6 text-center lg:px-10">
-        <Pill>Curriculum breakdown</Pill>
+        <Pill tone="dark">Curriculum breakdown</Pill>
         <h2 className="mx-auto mt-5 max-w-2xl text-5xl font-medium tracking-tight text-white sm:text-6xl">
           Your 6-Week Guide to Product Design
         </h2>
@@ -134,14 +134,14 @@ export default function Curriculum() {
             />
           ))}
 
-          <div className="flex items-center justify-between gap-4 rounded-2xl bg-white p-5 text-left text-ink">
+          <div className="flex items-start justify-between gap-4 rounded-2xl bg-white p-5 text-left text-ink">
             <span>
               <span className="block text-xl font-medium text-ink">Bonus Resources</span>
               <span className="mt-1 block text-lg text-ink/45">
                 Figma UI kit, portfolio templates and resume review
               </span>
             </span>
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-green text-white">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-black/5 text-ink/60">
               <PlusIcon />
             </span>
           </div>

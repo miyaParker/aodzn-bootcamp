@@ -14,7 +14,7 @@ const FIT = [
 export default function Audience() {
   return (
     <section className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
         <Reveal stagger={0.12}>
           <Pill>Why this bootcamp works</Pill>
           <h2 className="mx-auto mt-5 max-w-2xl text-5xl font-medium tracking-tight text-ink sm:text-6xl">
@@ -25,10 +25,10 @@ export default function Audience() {
           </p>
         </Reveal>
 
-        <Reveal stagger={0.06} className="mt-12 grid gap-x-10 gap-y-5 text-left sm:grid-cols-2">
+        <Reveal stagger={0.06} className="mt-14 grid gap-x-15 gap-y-5 text-left sm:grid-cols-2">
           {FIT.map((item) => (
-            <div key={item} className="flex items-start gap-3 text-ink/80">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-green text-white">
+            <div key={item} className="flex items-start gap-3 text-ink/80 text-xl max-w-md">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                 <CheckIcon />
               </span>
               <span>{item}</span>

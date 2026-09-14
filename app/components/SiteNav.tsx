@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRegistrationModal } from "./RegistrationModalContext";
 
@@ -19,12 +20,14 @@ export default function SiteNav() {
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
         <a href="#overview" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
-            A
-          </span>
-          <span className="text-base font-medium tracking-tight text-ink">
-            AODZN
-          </span>
+          <Image
+            src="/logo.svg"
+            alt="AODZN"
+            width={138}
+            height={44}
+            className="h-7 w-auto brightness-0"
+            priority
+          />
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink/60 lg:flex">

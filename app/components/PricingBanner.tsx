@@ -17,7 +17,7 @@ export default function PricingBanner() {
         className="pointer-events-none absolute bottom-8 right-6 h-6 w-6 rotate-12 rounded-md bg-primary/70 sm:right-16"
       />
 
-      <div className="relative mx-auto grid max-w-5xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-10">
+      <div className="relative mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-10">
         <Reveal stagger={0.12}>
           <svg viewBox="0 0 160 24" className="h-6 w-32 text-accent-yellow" fill="none">
             <path

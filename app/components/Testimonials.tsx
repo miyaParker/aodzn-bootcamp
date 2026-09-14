@@ -31,7 +31,7 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
+      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
         <Reveal stagger={0.12}>
           <Pill>Trusted by 9+ happy students</Pill>
           <h2 className="mx-auto mt-5 max-w-2xl text-5xl font-medium tracking-tight text-ink sm:text-6xl">

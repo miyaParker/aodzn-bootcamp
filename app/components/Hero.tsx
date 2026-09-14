@@ -65,7 +65,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] bg-gradient-to-b from-primary-light to-white"
       />
 
-      <div ref={introRef} className="relative mx-auto max-w-3xl px-6 text-center lg:px-10">
+      <div ref={introRef} className="relative mx-auto max-w-6xl px-6 text-center lg:px-10">
         <Pill>92% of graduates ship a portfolio-ready case study</Pill>
 
         <h1 className="mx-auto mt-8 max-w-3xl text-5xl font-medium leading-[1.08] tracking-tight text-ink sm:text-7xl">
@@ -108,13 +108,13 @@ export default function Hero() {
         </div>
       </div>
 
-      <div ref={cardsWrapRef} className="relative mx-auto mt-16 hidden max-w-5xl px-6 lg:block lg:px-10">
+      <div ref={cardsWrapRef} className="relative mx-auto mt-16 hidden max-w-6xl px-6 lg:block lg:px-10">
         <div ref={card1Ref} className="absolute -left-2 top-4 z-10 w-60 rounded-2xl border border-black/5 bg-white p-5 shadow-xl">
           <p className="text-base font-medium text-ink/40">This week</p>
           <ul className="mt-3 space-y-2.5">
             {CHECKLIST_MOCK.map((item) => (
               <li key={item} className="flex items-center gap-2.5 text-lg text-ink/80">
-                <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent-green text-white">
+                <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent-gold text-ink">
                   <CheckIcon className="h-2.5 w-2.5" />
                 </span>
                 {item}
@@ -127,13 +127,13 @@ export default function Hero() {
           <p className="text-base font-medium text-ink/40">Your progress</p>
           <div className="mt-3 flex items-center gap-3">
             <svg viewBox="0 0 36 36" className="h-12 w-12 -rotate-90">
-              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#eef1ff" strokeWidth="4" />
+              <circle cx="18" cy="18" r="15.5" fill="none" className="stroke-primary-light" strokeWidth="4" />
               <circle
                 cx="18"
                 cy="18"
                 r="15.5"
                 fill="none"
-                stroke="#3457ff"
+                className="stroke-primary"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeDasharray="97.4"

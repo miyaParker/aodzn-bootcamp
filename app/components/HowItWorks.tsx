@@ -20,7 +20,7 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto grid max-w-5xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
         <Reveal className="relative aspect-[4/3] overflow-hidden rounded-3xl" y={16}>
           <Image
             src={IMAGES.teamMeeting}
