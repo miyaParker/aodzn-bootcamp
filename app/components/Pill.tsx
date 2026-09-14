@@ -12,7 +12,7 @@ export default function Pill({ children, className = "", tone = "light" }: PillP
 
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full ${toneClasses} px-4 py-1.5 text-base font-medium ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full ${toneClasses} px-4 py-1.5 text-sm font-medium sm:text-base ${className}`}
     >
       {children}
     </span>
