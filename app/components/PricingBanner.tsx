@@ -1,7 +1,14 @@
 import PricingCard from "./PricingCard";
 import Reveal from "./Reveal";
+import type { PricingBannerContent, PricingContent } from "@/sanity/lib/types";
 
-export default function PricingBanner() {
+export default function PricingBanner({
+  content,
+  pricing,
+}: {
+  content: PricingBannerContent;
+  pricing: PricingContent;
+}) {
   return (
     <section id="pricing" className="relative overflow-hidden bg-ink py-20 text-white lg:py-28">
       <div
@@ -28,16 +35,15 @@ export default function PricingBanner() {
             />
           </svg>
           <h2 className="mt-6 text-5xl font-medium tracking-tight sm:text-6xl">
-            Transform Your Design Skills in Just 6 Weeks
+            {content.heading}
           </h2>
           <p className="mt-4 max-w-xl text-xl font-normal leading-relaxed text-white/60">
-            From scattered Figma files to confident, portfolio-ready case
-            studies. Learn the full product design process, hands-on.
+            {content.subheading}
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <PricingCard variant="banner" />
+          <PricingCard pricing={pricing} variant="banner" />
         </Reveal>
       </div>
     </section>

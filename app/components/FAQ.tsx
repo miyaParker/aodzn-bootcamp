@@ -4,33 +4,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Reveal from "./Reveal";
 import { PlusIcon } from "./icons";
-
-const FAQS = [
-  {
-    q: "Who is this bootcamp for?",
-    a: "This bootcamp is for anyone looking to break into product design, whether you're a beginner, a self-taught designer, or a junior designer wanting more practical, structured experience.",
-  },
-  {
-    q: "How are the lessons delivered?",
-    a: "Fully online. Live sessions run through video calls, with project work happening in Figma and your team's shared channels between sessions.",
-  },
-  {
-    q: "Do I need prior experience in design?",
-    a: "No. The programme is built for beginner to junior-level designers. What matters more is your willingness to practise, collaborate and take feedback.",
-  },
-  {
-    q: "Will I get a certificate?",
-    a: "Yes, participants who complete the programme receive a certificate of completion. The real outcome, however, is the portfolio case study you'll walk away with.",
-  },
-  {
-    q: "Can I get a refund if the bootcamp isn't for me?",
-    a: "Yes. If you're not satisfied within the first week of live sessions, we offer a full refund — no risk, only reward.",
-  },
-  {
-    q: "What equipment do I need?",
-    a: "A laptop, a stable internet connection, and a free Figma account.",
-  },
-];
+import type { FaqContent } from "@/sanity/lib/types";
 
 function FAQItem({
   q,
@@ -91,7 +65,7 @@ function FAQItem({
   );
 }
 
-export default function FAQ() {
+export default function FAQ({ content }: { content: FaqContent }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -99,16 +73,16 @@ export default function FAQ() {
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <Reveal>
           <h2 className="text-center text-5xl font-medium tracking-tight text-ink sm:text-6xl">
-            Frequently Asked Questions
+            {content.heading}
           </h2>
         </Reveal>
 
         <Reveal stagger={0.06} className="mt-12 divide-y divide-black/5 border-y border-black/5">
-          {FAQS.map((item, i) => (
+          {content.items.map((item, i) => (
             <FAQItem
-              key={item.q}
-              q={item.q}
-              a={item.a}
+              key={item.question}
+              q={item.question}
+              a={item.answer}
               isOpen={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             />

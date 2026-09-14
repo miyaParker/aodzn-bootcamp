@@ -1,23 +1,9 @@
 import Image from "next/image";
 import { IMAGES } from "../lib/images";
 import Reveal from "./Reveal";
+import type { HowItWorksContent } from "@/sanity/lib/types";
 
-const STEPS = [
-  {
-    title: "Learn at Your Own Pace",
-    body: "Access to 30+ on-demand video lessons, structured to walk you through every stage of the design process.",
-  },
-  {
-    title: "Apply What You Learn Daily",
-    body: "Turn theory into muscle memory through daily design exercises and challenges that build real confidence.",
-  },
-  {
-    title: "Practice with Live Critiques",
-    body: "Join weekly live sessions with the instructor for real-time feedback and practice presenting your work.",
-  },
-];
-
-export default function HowItWorks() {
+export default function HowItWorks({ content }: { content: HowItWorksContent }) {
   return (
     <section id="how-it-works" className="bg-white py-20 lg:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
@@ -34,12 +20,12 @@ export default function HowItWorks() {
         <div>
           <Reveal>
             <h2 className="text-5xl font-medium tracking-tight text-ink sm:text-6xl">
-              Your Roadmap to Product Design Success
+              {content.heading}
             </h2>
           </Reveal>
 
           <Reveal stagger={0.12} className="mt-10 space-y-8">
-            {STEPS.map((step) => (
+            {content.steps.map((step) => (
               <div key={step.title} className="flex gap-4">
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-green text-base font-semibold text-white">
                   ✓

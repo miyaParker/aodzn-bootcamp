@@ -3,6 +3,7 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import ApplicationForm from "./ApplicationForm";
 import Modal from "./Modal";
+import type { PricingContent } from "@/sanity/lib/types";
 
 type RegistrationModalContextValue = {
   open: () => void;
@@ -18,7 +19,13 @@ export function useRegistrationModal() {
   return ctx;
 }
 
-export default function RegistrationModalProvider({ children }: { children: ReactNode }) {
+export default function RegistrationModalProvider({
+  children,
+  pricing,
+}: {
+  children: ReactNode;
+  pricing: PricingContent;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const value = useMemo(() => ({ open: () => setIsOpen(true) }), []);
@@ -32,9 +39,9 @@ export default function RegistrationModalProvider({ children }: { children: Reac
             id="apply-modal-heading"
             className="cursor-pointer mb-6 text-2xl font-medium text-ink"
           >
-            Enroll in the Bootcamp
+            {pricing.primaryCtaLabel}
           </h3>
-          <ApplicationForm />
+          <ApplicationForm pricing={pricing} />
         </div>
       </Modal>
     </RegistrationModalContext.Provider>

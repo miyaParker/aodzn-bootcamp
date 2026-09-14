@@ -2,25 +2,15 @@
 
 import { useRegistrationModal } from "./RegistrationModalContext";
 import { CheckIcon } from "./icons";
+import type { PricingContent } from "@/sanity/lib/types";
 
-export const PRICING = {
-  originalPrice: 600,
-  price: 450,
-  discountPercent: 25,
-  instalmentCount: 3,
-  instalmentAmount: 150,
-};
-
-const PERKS = [
-  "6 weeks of live, cohort-based teaching",
-  "Certificate of completion",
-  "Weekly design critiques & feedback",
-  "Downloadable templates & resources",
-  "Continued access to the alumni community",
-  "Live mentor office hours",
-];
-
-export default function PricingCard({ variant = "card" }: { variant?: "card" | "banner" }) {
+export default function PricingCard({
+  pricing,
+  variant = "card",
+}: {
+  pricing: PricingContent;
+  variant?: "card" | "banner";
+}) {
   const { open } = useRegistrationModal();
   const isCard = variant === "card";
 
@@ -34,19 +24,19 @@ export default function PricingCard({ variant = "card" }: { variant?: "card" | "
     >
       <div className="flex items-center gap-3">
         <span className="rounded-full bg-accent-gold px-6 py-3 text-2xl font-medium text-ink">
-          {PRICING.discountPercent}% off
+          {pricing.discountPercent}% off
         </span>
         <span className="text-xl text-white/40 line-through">
-          ${PRICING.originalPrice}
+          ${pricing.originalPrice}
         </span>
       </div>
 
       <p className="mt-4 text-4xl font-medium tracking-tight sm:text-5xl">
-        ${PRICING.price}
+        ${pricing.price}
       </p>
 
       <ul className="mt-8 space-y-3.5">
-        {PERKS.map((perk) => (
+        {pricing.perks.map((perk) => (
           <li key={perk} className="flex items-start gap-3 text-lg text-white/80">
             <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-green/15 text-accent-green">
               <CheckIcon />
@@ -62,14 +52,14 @@ export default function PricingCard({ variant = "card" }: { variant?: "card" | "
           onClick={open}
           className="cursor-pointer w-full rounded-full bg-primary px-6 py-3.5 text-lg font-medium text-white transition-colors hover:bg-primary-dark"
         >
-          Enroll in the Bootcamp
+          {pricing.primaryCtaLabel}
         </button>
         <button
           type="button"
           onClick={open}
           className="cursor-pointer w-full rounded-full border border-white/25 px-6 py-3.5 text-lg font-medium text-white transition-colors hover:border-white/50"
         >
-          Pay in {PRICING.instalmentCount} instalments of ${PRICING.instalmentAmount}
+          Pay in {pricing.instalmentCount} instalments of ${pricing.instalmentAmount}
         </button>
       </div>
     </div>

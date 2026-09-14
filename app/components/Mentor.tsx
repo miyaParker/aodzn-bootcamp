@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Pill from "./Pill";
+import type { MentorContent } from "@/sanity/lib/types";
 
-export default function Mentor() {
+export default function Mentor({ content }: { content: MentorContent }) {
   return (
     <section id="mentor" className="bg-primary-dark py-20 text-white lg:py-28">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-10">
@@ -10,7 +11,7 @@ export default function Mentor() {
           <div className="absolute inset-0 overflow-hidden rounded-3xl bg-white/10">
             <Image
               src="/abdul.jpeg"
-              alt="Abdulazees Olayinka"
+              alt={content.name}
               fill
               sizes="(min-width: 1024px) 24rem, 90vw"
               className="object-cover"
@@ -31,22 +32,15 @@ export default function Mentor() {
         </Reveal>
 
         <Reveal stagger={0.12}>
-          <Pill tone="dark">Meet your instructor</Pill>
+          <Pill tone="dark">{content.pillText}</Pill>
           <h2 className="mt-5 text-5xl font-medium tracking-tight sm:text-6xl">
-            Abdulazees Olayinka
+            {content.name}
           </h2>
           <p className="mt-4 max-w-xl text-xl font-normal leading-relaxed text-white/60">
-            Abdulazees has spent more than a decade working across brand and
-            digital product design, helping teams turn early ideas and
-            complicated problems into clear, usable experiences. He founded
-            AODZN to give aspiring designers the practical guidance, honest
-            feedback and collaborative experience that&apos;s hard to get from
-            isolated tutorials.
+            {content.bio}
           </p>
           <p className="mt-6 font-quote text-2xl italic text-white/90">
-            &ldquo;Good design isn&apos;t about being perfect. It&apos;s about
-            being prepared. My goal is to help you find your process and own
-            the room.&rdquo;
+            &ldquo;{content.quote}&rdquo;
           </p>
         </Reveal>
       </div>

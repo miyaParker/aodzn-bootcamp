@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import localFont from "next/font/local";
-import RegistrationModalProvider from "./components/RegistrationModalContext";
-import "./globals.css";
+import RegistrationModalProvider from "../components/RegistrationModalContext";
+import { getHomePageData } from "@/sanity/lib/data";
+import "../globals.css";
 
 const neueMontreal = localFont({
   variable: "--font-neue-montreal",
@@ -30,14 +32,16 @@ export const metadata: Metadata = {
     "Learn design by designing something real. A hands-on, cohort-based product design bootcamp for aspiring designers ready to build practical skills, work with a team, and create portfolio-ready projects.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const { pricing } = await getHomePageData();
+
   return (
     <html
       lang="en"
       className={`${neueMontreal.variable} ${recklessNeue.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
-        <RegistrationModalProvider>{children}</RegistrationModalProvider>
+        <RegistrationModalProvider pricing={pricing}>{children}</RegistrationModalProvider>
       </body>
     </html>
   );
