@@ -48,7 +48,7 @@ function WeekItem({
         aria-expanded={isOpen}
       >
         <span>
-          <span className="block text-xl font-medium text-ink">
+          <span className="block text-xl font-medium text-ink text-left">
             Week {index + 1}: {week.title}
           </span>
           <span className="mt-1 block text-left text-lg text-ink/45">

@@ -44,8 +44,9 @@ export default function Footer({
               className="h-7 w-auto brightness-0"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/50">
-              A hands-on, cohort-based product design bootcamp for aspiring
-              designers ready to build real, portfolio-ready work.
+              A hands-on, cohort-based product design bootcamp founded by
+              Abdulazees Olayinka for aspiring designers ready to build real,
+              portfolio-ready work.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map(({ label, href, Icon }) => (
